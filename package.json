@@ -11,20 +11,12 @@
     "dependencies": {
         "async": "^2.6.1",
         "chai": "^4.1.2",
-        "fast-tcp": "^3.3.2",
         "fs-extra": "^7.0.0",
         "global-logger": "^1.0.0",
-        "ioredis": "^3.2.2",
-        "json-stream-parse": "^1.0.3",
         "moment": "^2.22.2",
         "mute": "^2.0.6",
-        "npm": "^6.4.1",
-        "pm2": "^3.0.1",
-        "pretty-bytes": "^5.0.0",
         "shortid": "^2.2.8",
-        "underscore": "^1.9.1",
-        "zeromq": "^4.6.0",
-        "zeromq-ng": "^5.0.0-beta.15"
+        "underscore": "^1.9.1"
     },
     "devDependencies": {
         "mocha": "^5.2.0"

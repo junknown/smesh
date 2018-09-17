@@ -30,21 +30,6 @@ let startSmesh = async () => {
     });
 };
 
-let startTCPFast = async () => {
-    let Socket = require('fast-tcp').Socket;
-    let Server = require('fast-tcp').Server;
-
-    const fs = require('fs-extra');
-    await fs.remove('../ipc/test.ipc');
-    let server = new Server();
-    server.listen({ path: '../ipc/test.ipc' });
-
-    server.on('connection', (socket) => {
-        socket.on('test', (data) => {
-            socket.emit('test', getResp());
-        });
-    });
-};
 let startZMQ = async () => {
     const { Socket, SocketEvents } = require('../lib/network/zeromqSocket');
     let zmq = require('zeromq-ng');
@@ -70,8 +55,4 @@ if (process.argv[2] === 'smesh') {
 }
 if (process.argv[2] === 'zmq') {
     startZMQ();
-}
-
-if (process.argv[2] === 'fast') {
-    startTCPFast();
 }

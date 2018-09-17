@@ -108,33 +108,9 @@ let startZMQ = async () => {
     }
 };
 
-const startTCPFast = async () => {
-    let FastSocket = require('fast-tcp').Socket;
-    let socket = new FastSocket({ path: '../ipc/test.ipc' });
-
-
-    socket.on('test', (data, callback) => {
-        let end = onData(data);
-        if (end) {
-            socket.destroy();
-        }
-    });
-
-
-    let obj = getSend();
-    time = new Date().getTime();
-
-    for (let i = 0; i < size; i++) {
-        socket.emit('test', obj);
-    }
-};
 if (process.argv[2] === 'smesh') {
     startSmesh();
 }
 if (process.argv[2] === 'zmq') {
     startZMQ();
-}
-
-if (process.argv[2] === 'fast') {
-    startTCPFast();
 }
