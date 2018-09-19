@@ -17,6 +17,6 @@ const start = async () => {
 };
 
 
-start().then(() => {
-    console.log('FINE');
+start().catch((err) => {
+    global.logger.error("Errore nell'esecuzione", err);
 });

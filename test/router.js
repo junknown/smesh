@@ -1,5 +1,4 @@
 
-const Client = require('../lib/client');
 const Router = require('../lib/router');
 
 const GlobalLogger = require('global-logger');
@@ -15,4 +14,6 @@ const start = async () => {
 };
 
 
-start();
+start().catch((err) => {
+    global.logger.error("Errore nell'esecuzione", err);
+});

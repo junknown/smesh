@@ -12,6 +12,7 @@ const start = async () => {
     let client = new Client('test', { waitChannels: ['start'] });
 
     let interval;
+    let data = [];
 
     client.onConnect(() => {
         interval = setInterval(() => {
@@ -33,6 +34,6 @@ const start = async () => {
 };
 
 
-start().then(() => {
-    console.log('FINE');
-}).catch((err) => { console.log('ERROR', err); });
+start().catch((err) => {
+    global.logger.error("Errore nell'esecuzione", err);
+});
